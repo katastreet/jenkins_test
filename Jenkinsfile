@@ -9,13 +9,13 @@ pipeline {
 
         stage('Docker-build') {
             steps {
-                docker ps;
+                sh label: '', script: 'docker ps'
             }
         }
 
         stage('Docker run') {
             steps {
-                docker ps;
+                sh label: '', script: 'docker ps'
             }
         }
     }
