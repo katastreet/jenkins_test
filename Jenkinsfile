@@ -10,6 +10,7 @@ pipeline {
         stage('Docker-build') {
             steps {
                 sh label: '', script: 'docker ps'
+		sh label: '', script: 'ls'
             }
         }
 
