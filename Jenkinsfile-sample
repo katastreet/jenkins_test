@@ -1,21 +1,27 @@
 pipeline {
     agent any
     stages {
-        stage('git-checkout') {
+        stage('compile') {
             steps {
-                git 'https://github.com/katastreet/jenkins_test'
+                echo "Compiled successfully";
             }
         }
 
-        stage('Docker-build') {
+        stage('JUnit') {
             steps {
-                docker ps;
+                echo "Junit passed successfully";
             }
         }
 
-        stage('Docker run') {
+        stage('Quality-Gate') {
             steps {
-                docker ps;
+                echo "Quality gate passed successfully";
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo "Successfully deployed";
             }
         }
     }
