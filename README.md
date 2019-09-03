@@ -35,3 +35,10 @@ To see the list of all Docker images available on your machine, you can use the
 `docker images` command. If you've run the commands above, you'll see
 `docker-php-hello-world` in the list. You can delete the image to free up disk
 space by running `docker rmi docker-php-hello-world`.
+
+
+## Setup jenkins
+
+docker run  -u root --restart on-failure -p 8080:8080 -p 50000:50000 -v /var/run/docker.sock:/var/run/docker.sock  -v /usr/bin/docker:/usr/bin/docker jenkins/jenkins:lts
+
+
