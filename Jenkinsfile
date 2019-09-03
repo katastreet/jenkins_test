@@ -9,14 +9,13 @@ pipeline {
 
         stage('Docker-build') {
             steps {
-                sh label: '', script: 'docker ps'
-		sh label: '', script: 'ls'
+                sh label: '', script: 'docker build -t docker-php-hello-world .'
             }
         }
 
         stage('Docker run') {
             steps {
-                sh label: '', script: 'docker ps'
+                sh label: '', script: 'docker run --name=docker-php-hello-world -d --rm -p 80:80 docker-php-hello-world'
             }
         }
     }
